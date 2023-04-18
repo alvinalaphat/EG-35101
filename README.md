@@ -1,2 +1,8 @@
 # EG-35101
-Spring 2023
+
+## Battleship Setup Instructions
+
+
+
+
+## Animatronics Setup Instructions
