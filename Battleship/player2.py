@@ -105,6 +105,7 @@ sinks2 = 0
 
 label0 = M5Label(player1guess, x=119, y=105, color=0x000, font=FONT_MONT_14, parent=None)
 
+# Call this function when player 1 has entered a respond to player 2's guess
 def player1responsefunc():
   
   # Clear player 2 response
