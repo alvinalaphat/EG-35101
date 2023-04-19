@@ -103,13 +103,9 @@ ships2 = 6
 sinks1 = 0
 sinks2 = 0
 
-Player1Response = ''
-Player1Guess = ''
-Player2Response = ''
-Player2Guess = ''
 
- 
-# Display buttons for Player 1 to make their first guess
+def player1guessfunc():
+    # Display buttons for Player 1 to make their first guess
 A = M5Btn(text='A', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
 B = M5Btn(text='B', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
 C = M5Btn(text='C', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
@@ -117,7 +113,107 @@ D = M5Btn(text='D', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, fon
 E = M5Btn(text='E', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
 F = M5Btn(text='F', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
 
-def A_pressed():
+   def A_pressed():
+        screen.clean_screen()
+        wait(2)
+        one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+        two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+        three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+        four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+        five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+        six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+ 
+  #send selected variable to blynk
+  #display selected coordinate then wait while the screen below is shown on student B
+   
+        def one_pressed():
+         screen.clean_screen()
+         blynk.virtual_write(0, "A1")
+        one.pressed(one_pressed)
+  
+     def two_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "A2")
+       
+     two.pressed(two_pressed)
+     
+     def three_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "A3")
+      
+     three.pressed(three_pressed)
+
+     def four_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "A4")
+      
+     four.pressed(three_pressed)
+     
+     def five_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "A5")
+      
+     five.pressed(three_pressed)
+     
+     def six_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "A6")
+      
+     six.pressed(three_pressed)
+     
+  A.pressed(A_pressed)
+  
+  def B_pressed():
+       
+       screen.clean_screen()
+       wait(2)
+       one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     
+     
+       def one_pressed():
+          screen.clean_screen()
+          blynk.virtual_write(0, "B1")
+       
+       one.pressed(one_pressed)
+    
+       def two_pressed():
+          screen.clean_screen()
+          blynk.virtual_write(0, "B2")
+         
+       two.pressed(two_pressed)
+       
+       def three_pressed():
+          screen.clean_screen()
+          blynk.virtual_write(0, "B3")
+        
+       three.pressed(three_pressed)
+  
+       def four_pressed():
+          screen.clean_screen()
+          blynk.virtual_write(0, "B4")
+        
+       four.pressed(three_pressed)
+       
+       def five_pressed():
+          screen.clean_screen()
+          blynk.virtual_write(0, "B5")
+        
+       five.pressed(three_pressed)
+       
+       def six_pressed():
+          screen.clean_screen()
+          blynk.virtual_write(0, "B6")
+        
+       six.pressed(three_pressed)
+       
+  B.pressed(B_pressed)
+    
+  def C_pressed():
    
    screen.clean_screen()
    wait(2)
@@ -128,88 +224,118 @@ def A_pressed():
    five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
    six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
  
-  #send selected variable to blynk
-  #display selected coordinate then wait while the screen below is shown on student B
-   
-   def one_pressed():
-     screen.set_screen_bg_color(0xffffff)
-     blynk.virtual_write(0,"A1")
-   one.pressed(one_pressed)
-   
-   def two_pressed():
-     screen.set_screen_bg_color(0xffffff)
-     blynk.virtual_write(0,"A2")
-     screen.clean_screen()
-     wait(1)
-   two.pressed(two_pressed)
-   
-   #three.pressed(one_pressed)
-   #four.pressed(one_pressed)
-   #two.pressed(one_pressed)
-   #five.pressed(one_pressed)
-   #six.pressed(one_pressed)
-A.pressed(A_pressed)
+ 
+     def one_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "C1")
+     
+     one.pressed(one_pressed)
+  
+     def two_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "C2")
+       
+     two.pressed(two_pressed)
+     
+     def three_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "C3")
+      
+     three.pressed(three_pressed)
+  
+     def four_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "C4")
+      
+     four.pressed(three_pressed)
+     
+     def five_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "C5")
+      
+     five.pressed(three_pressed)
+     
+     def six_pressed():
+        screen.clean_screen()
+        blynk.virtual_write(0, "C6")
+      
+     six.pressed(three_pressed)
+     
+  C.pressed(C_pressed)
 wait(5)
 blynk.virtual_write(0, 'NA')
 
+# end guessing function
 
 # After all buttons displayed, and selection sent to player 2, display hit, miss sink reaction
 # store variable
 
 def player2responsefunc():
-  if Player2Response == 'hit':
-     screen.clean_screen()
-     screen.set_screen_bg_color(0x00ff00)
-     screen.clean_screen()
-     
-  elif Player2Response == 'miss':
-     screen.clean_screen()
-     screen.set_screen_bg_color(0xff0000)
-     screen.clean_screen()
-     
-  elif Player2Response == 'sink':
-     screen.clean_screen()
-     screen.set_screen_bg_color(0x0000ff)
-     screen.clean_screen()
-     sinks2 = sinks2 + 1
-   
+    #Clear player 1 response 
+    wait(5)
+    blynk.virtual_write(3, "NA")
+    
+    #Display appropriate screen message based on player 2 response 
+  if player1response != "NA":
+    if player1response == 'hit':
+       screen.clean_screen()
+       screen.set_screen_bg_color(0x00ff00)
+       
+    elif player1response == 'miss':
+       screen.clean_screen()
+       screen.set_screen_bg_color(0xff0000)
+       
+    elif player1response == 'sink':
+       screen.clean_screen()
+       screen.set_screen_bg_color(0x0000ff)
+       sinks1 = sinks1 + 1
 
-wait(5)
 #wait for player 2 to guess
 # display player 2 guess on the screen
-screen.clean_screen()
-lcd.print(Player2Guess)
+label0 = M5Label(player2guess, x=119, y=105, color=0x000, font=FONT_MONT_14, parent=None)
 
-#display.println(Player2Guess)
-#display.display()
-hit = M5Btn(text='hit', x=18, y=118, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-miss = M5Btn(text='miss', x=118, y=118, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-sink = M5Btn(text='sink', x=220, y=118, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+if player2guess != "NA":
+   #get and display player1guess on top of screen and offer hit, miss, sink options
+  lcd.print(str(player2guess), lcd.CENTER, lcd.CENTER)
 
-def hit_pressed():
-   blynk.virtual_write(3,"hit")
-hit.pressed(hit_pressed)
-     
-def sink_pressed():
-    blynk.virtual_write(3,"sink")
-    global sinks1
-    sinks1 = sinks1 + 1
-    #need sd card to display image
-    # Open the image file
-    #with open('/sd/my_image.jpg', 'rb') as f:
-    #img_data = f.read()
+  hit = M5Btn(text='hit', x=18, y=118, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+  miss = M5Btn(text='miss', x=118, y=118, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+  sink = M5Btn(text='sink', x=220, y=118, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
 
-   # Display the image on the screen
-   #lcd.image(0, 0, img_data)
-   #wait(7)
-sink.pressed(sink_pressed)
-     
-def miss_pressed():
-    blynk.virtual_write(3,"miss")
-miss.pressed(miss_pressed)
+# Update channel V3 when either hit, miss, or sink is pressed
+  def hit_pressed():
+    global button_pressed
+    button_pressed = True
+    blynk.virtual_write(3, "hit")
+    screen.clean_screen()
+  
+  hit.pressed(hit_pressed)
+  
+  def miss_pressed():
+    global button_pressed
+    button_pressed = True
+    blynk.virtual_write(3, "miss")
+    screen.clean_screen()
+  
+  miss.pressed(miss_pressed)
+  
+  def sink_pressed():
+    global button_pressed
+    button_pressed = True
+    blynk.virtual_write(3, "sink")
+    global sinks2
+    sinks2 = sinks2+1
+    screen.clean_screen()
+  
+  sink.pressed(sink_pressed)
+  
+  
+  # Clear player 2 guess and move on to player1guess
+  if button_pressed = True :
+    blynk.virtual_write(2, "NA")
+    player1guessfunc()
 
-wait(5)
-blynk.virtual_write(3,"NA")
+
 
 #while loop
 while True:
