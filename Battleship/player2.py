@@ -43,9 +43,6 @@ playing = True
 # handling states
 @blynk.on("connected")
 def blynk_connected(ping):
-    # lcd.print('Blynk ready. Ping:')
-    # lcd.print(ping)
-    # lcd.println('ms')
     pass
  
 @blynk.on("disconnected")
@@ -54,13 +51,13 @@ def blynk_disconnected():
 
 
 # Make sure blynk channels are all reset
-blynk.virtual_write(0, "A2")
+blynk.virtual_write(0, "NA")
 blynk.virtual_write(1, "NA")
 blynk.virtual_write(2, "NA")
 blynk.virtual_write(3, "NA")
 
 # Initialize blynk channel variables
-player1guess = "A2"
+player1guess = "NA"
 player2response = "NA"
 player2guess = "NA"
 player1response = "NA"
