@@ -247,64 +247,7 @@ def player2guessFunc():
        
   B.pressed(B_pressed)
     
-  def C_pressed():
-   
-   screen.clean_screen()
-   wait(2)
-   one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-   two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-   three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-   four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-   five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-   six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
- 
- 
-     def one_pressed():
-        screen.clean_screen()
-        blynk.virtual_write(2, "C1")
-        player1respFunc()
-        
-     
-     one.pressed(one_pressed)
   
-     def two_pressed():
-        screen.clean_screen()
-        blynk.virtual_write(2, "C2")
-        player1respFunc()
-        
-       
-     two.pressed(two_pressed)
-     
-     def three_pressed():
-        screen.clean_screen()
-        blynk.virtual_write(2, "C3")
-        player1respFunc()
-        
-      
-     three.pressed(three_pressed)
-  
-     def four_pressed():
-        screen.clean_screen()
-        blynk.virtual_write(2, "C4")
-        player1respFunc()
-      
-     four.pressed(three_pressed)
-     
-     def five_pressed():
-        screen.clean_screen()
-        blynk.virtual_write(2, "C5")
-        player1respFunc()
-      
-     five.pressed(three_pressed)
-     
-     def six_pressed():
-        screen.clean_screen()
-        blynk.virtual_write(2, "C6")
-        player1respFunc()
-      
-     six.pressed(three_pressed)
-     
-  C.pressed(C_pressed)
 
 
 def player2respFunc():
@@ -336,23 +279,24 @@ def player2respFunc():
   sink.pressed(sink_pressed)
   
 
-while sinks1 != ships1 AND ships2 != sinks2
-    if player1response != "NA":
-        player1respFunc()
+while sinks1 != ships1 and sinks2 != ships2:
+    if player2response != "NA":
+        player2guessFunc()
         wait(5)
-        blynk.virtual_write(3, 'NA')
-        blynk.virtual_write(2, 'NA')
+        # blynk.virtual_write(3, 'NA')
+        # blynk.virtual_write(2, 'NA')
         
     elif player1guess != "NA":
         player2respFunc()
         wait(5)
-        blynk.virtual_write(0, 'NA')
-        blynk.virtual_write(1, 'NA')
+        # blynk.virtual_write(0, 'NA')
+        # blynk.virtual_write(1, 'NA')
         
-    else:
-        player2guessFunc()
+    elif player2guess != "NA":
         wait(5)
-        blynk.virtual_write(2, 'NA')
+        player1respFunc()
+
+        # blynk.virtual_write(2, 'NA')
 
 
 
