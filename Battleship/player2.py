@@ -118,6 +118,7 @@ def player1responseFunc():
        screen.clean_screen()
        
   elif player1response == 'sink':
+       global sinks1
        screen.clean_screen()
        screen.set_screen_bg_color(0x0000ff)
        screen.clean_screen()
@@ -282,18 +283,15 @@ def player2respFunc():
 if sinks1 != ships1 and sinks2 != ships2:
     if player2response != "NA":
         player2guessFunc()
-        wait(5)
         # blynk.virtual_write(3, 'NA')
         # blynk.virtual_write(2, 'NA')
         
     elif player1guess != "NA":
         player2respFunc()
-        wait(5)
         # blynk.virtual_write(0, 'NA')
         # blynk.virtual_write(1, 'NA')
         
     elif player2guess != "NA":
-        wait(5)
         player1respFunc()
 
         # blynk.virtual_write(2, 'NA')
