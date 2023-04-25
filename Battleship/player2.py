@@ -279,7 +279,7 @@ def player2respFunc():
   sink.pressed(sink_pressed)
   
 
-while sinks1 != ships1 and sinks2 != ships2:
+if sinks1 != ships1 and sinks2 != ships2:
     if player2response != "NA":
         player2guessFunc()
         wait(5)
