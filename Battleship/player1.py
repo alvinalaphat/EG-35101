@@ -196,7 +196,7 @@ def player1respFunc():
     
  
 
-while sinks1 != ships1 and sinks2 != ships2:
+if sinks1 != ships1 and sinks2 != ships2:
 
     if player2response != "NA":
         player2respFunc()
