@@ -200,24 +200,19 @@ if sinks1 != ships1 and sinks2 != ships2:
 
     if player2response != "NA":
         player2respFunc()
-        wait(5)
         # blynk.virtual_write(1, 'NA')
         # blynk.virtual_write(0, 'NA')
         
     elif player2guess != "NA":
         player1respFunc()
-        wait(5)
         # blynk.virtual_write(2, 'NA')
         # blynk.virtual_write(3, 'NA')
     elif player1response != "NA":
         player1guessFunc()
     else:
-        wait(5)
         player1guessFunc()
-        wait(5)
         # blynk.virtual_write(0, 'NA')
         
 while True:
     blynk.run()
     timer.run()
-
