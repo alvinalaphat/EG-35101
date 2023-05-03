@@ -133,6 +133,7 @@ def player1responseFunc():
 
 # Function for continuing after player 2 has responded
 def player2guessFunc():
+  screen.clean_screen()
   # Display row position buttons
   A = M5Btn(text='A', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
   B = M5Btn(text='B', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
@@ -169,92 +170,313 @@ def player2guessFunc():
      
      def three_pressed():
         screen.clean_screen()
-        blynk.virtual_write(2, "A3")
-        player1respFunc()
+        global player2guess
+        player2guess = "A3"
       
      three.pressed(three_pressed)
 
      def four_pressed():
         screen.clean_screen()
-        blynk.virtual_write(2, "A4")
-        player1respFunc()
+        global player2guess
+        player2guess = "A4"
       
-     four.pressed(three_pressed)
+     four.pressed(four_pressed)
      
      def five_pressed():
         screen.clean_screen()
-        blynk.virtual_write(2, "A5")
-        player1respFunc()
+        global player2guess
+        player2guess = "A5"
       
-     five.pressed(three_pressed)
+     five.pressed(five_pressed)
      
      def six_pressed():
         screen.clean_screen()
-        blynk.virtual_write(2, "A6")
-        player1respFunc()
+        global player2guess
+        player2guess = "A6"
       
-     six.pressed(three_pressed)
+     six.pressed(six_pressed)
      
   A.pressed(A_pressed)
   
   def B_pressed():
        
-       screen.clean_screen()
-       wait(2)
-       one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-       two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-       three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-       four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-       five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
-       six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     screen.clean_screen()
+     wait(2)
+     one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
      
      
-       def one_pressed():
-          screen.clean_screen()
-          blynk.virtual_write(2, "B1")
-          player1respFunc()
-       
-       one.pressed(one_pressed)
-    
-       def two_pressed():
-          screen.clean_screen()
-          blynk.virtual_write(2, "B2")
-          player1respFunc()
-         
-       two.pressed(two_pressed)
-       
-       def three_pressed():
-          screen.clean_screen()
-          blynk.virtual_write(2, "B3")
-          player1respFunc()
-        
-       three.pressed(three_pressed)
+     def one_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "B1"
+     
+     one.pressed(one_pressed)
   
-       def four_pressed():
-          screen.clean_screen()
-          blynk.virtual_write(2, "B4")
-          player1respFunc()
-        
-       four.pressed(three_pressed)
+     def two_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "B2"
        
-       def five_pressed():
-          screen.clean_screen()
-          blynk.virtual_write(2, "B5")
-          player1respFunc()
-        
-       five.pressed(three_pressed)
-       
-       def six_pressed():
-          screen.clean_screen()
-          blynk.virtual_write(2, "B6")
-          player1respFunc()
-        
-        
-       six.pressed(three_pressed)
+     two.pressed(two_pressed)
+     
+     def three_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "B3"
+      
+     three.pressed(three_pressed)
+
+     def four_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "B4"
+      
+     four.pressed(four_pressed)
+     
+     def five_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "B5"
+      
+     five.pressed(five_pressed)
+     
+     def six_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "B6"
+      
+     six.pressed(six_pressed)
        
   B.pressed(B_pressed)
     
+  def C_pressed():
+       
+     screen.clean_screen()
+     wait(2)
+     one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     
+     
+     def one_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "C1"
+     
+     one.pressed(one_pressed)
   
+     def two_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "C2"
+       
+     two.pressed(two_pressed)
+     
+     def three_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "C3"
+      
+     three.pressed(three_pressed)
+
+     def four_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "C4"
+      
+     four.pressed(four_pressed)
+     
+     def five_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "C5"
+      
+     five.pressed(five_pressed)
+     
+     def six_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "C6"
+      
+     six.pressed(six_pressed)
+       
+  C.pressed(C_pressed)
+
+  def D_pressed():
+       
+     screen.clean_screen()
+     wait(2)
+     one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     
+     
+     def one_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "D1"
+     
+     one.pressed(one_pressed)
+  
+     def two_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "D2"
+       
+     two.pressed(two_pressed)
+     
+     def three_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "D3"
+      
+     three.pressed(three_pressed)
+
+     def four_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "D4"
+      
+     four.pressed(four_pressed)
+     
+     def five_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "D5"
+      
+     five.pressed(five_pressed)
+     
+     def six_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "D6"
+      
+     six.pressed(six_pressed)
+       
+  D.pressed(D_pressed)
+
+  def E_pressed():
+       
+     screen.clean_screen()
+     wait(2)
+     one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     
+     
+     def one_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "E1"
+     
+     one.pressed(one_pressed)
+  
+     def two_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "E2"
+       
+     two.pressed(two_pressed)
+     
+     def three_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "E3"
+      
+     three.pressed(three_pressed)
+
+     def four_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "E4"
+      
+     four.pressed(four_pressed)
+     
+     def five_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "E5"
+      
+     five.pressed(five_pressed)
+     
+     def six_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "E6"
+      
+     six.pressed(six_pressed)
+       
+  E.pressed(E_pressed)
+
+  def F_pressed():
+       
+     screen.clean_screen()
+     wait(2)
+     one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+     
+     
+     def one_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "F1"
+     
+     one.pressed(one_pressed)
+  
+     def two_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "F2"
+       
+     two.pressed(two_pressed)
+     
+     def three_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "F3"
+      
+     three.pressed(three_pressed)
+
+     def four_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "F4"
+      
+     four.pressed(four_pressed)
+     
+     def five_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "F5"
+      
+     five.pressed(five_pressed)
+     
+     def six_pressed():
+        screen.clean_screen()
+        global player2guess
+        player2guess = "F6"
+      
+     six.pressed(six_pressed)
+       
+  F.pressed(F_pressed)
 
 
 def player2respFunc():
