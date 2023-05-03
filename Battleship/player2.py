@@ -87,6 +87,12 @@ def v3_read_handler():
 def updateBlynk():
     global player1
     global player2
+    global player1guess
+    global player2guess
+    global player1response
+    global player2response
+    blynk.virtual_write(1, player2response)
+    blynk.virtual_write(2, player2guess)
 
 # Create BlynkTimer Instance
 timer = BlynkTimer()
@@ -149,15 +155,15 @@ def player2guessFunc():
    
      def one_pressed():
         screen.clean_screen()
-        blynk.virtual_write(2, "A1")
-        player1respFunc()
+        global player2guess
+        player2guess = "A1"
      
      one.pressed(one_pressed)
   
      def two_pressed():
         screen.clean_screen()
-        blynk.virtual_write(2, "A2")
-        player1respFunc()
+        global player2guess
+        player2guess = "A2"
        
      two.pressed(two_pressed)
      
@@ -253,6 +259,7 @@ def player2guessFunc():
 
 def player2respFunc():
     #get and display player1guess on top of screen and offer hit, miss, sink options
+  screen.clean_screen()
   lcd.print(str(player1guess), lcd.CENTER, lcd.CENTER)
   hit = M5Btn(text='Hit', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
   miss = M5Btn(text='Miss', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
@@ -260,44 +267,50 @@ def player2respFunc():
   
   # Update channel V1 when either hit, miss, or sink is pressed
   def hit_pressed():
-    blynk.virtual_write(1, "hit")
-    screen.clean_screen()
+    global player2response
+    player2response = "hit"
   
   hit.pressed(hit_pressed)
   
   def miss_pressed():
-    blynk.virtual_write(1, "miss")
-    screen.clean_screen()
+    global player2response
+    player2response = "miss"
   
   miss.pressed(miss_pressed)
   
   def sink_pressed():
-    blynk.virtual_write(1, "sink")
+    global player2response
+    player2response = "sink"
     global sinks2
     sinks2 = sinks2+1
-    screen.clean_screen()
   
   sink.pressed(sink_pressed)
   
 
-if sinks1 != ships1 and sinks2 != ships2:
-    if player2response != "NA":
-        player2guessFunc()
-        # blynk.virtual_write(3, 'NA')
-        # blynk.virtual_write(2, 'NA')
-        
-    elif player1guess != "NA":
-        player2respFunc()
-        # blynk.virtual_write(0, 'NA')
-        # blynk.virtual_write(1, 'NA')
-        
-    elif player2guess != "NA":
-        player1respFunc()
+def readyFunc():
+    screen.clean_screen()
+    ready = M5Btn(text='ready', x=118, y=118, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+    global rpress
+    rpress = False
+    def ready_pressed():
+        global rpress
+        rpress = True
+    ready.pressed(ready_pressed)
 
-        # blynk.virtual_write(2, 'NA')
-
-
-
-while True:
-    blynk.run()
-    timer.run()
+while sinks1 != ships1 and sinks2 != ships2:
+  readyFunc()
+  while not rpress:
+    wait(1)
+    updateBlynk()
+  player2response = "NA"
+  player2respFunc()
+  while player2response == "NA":
+    wait(1)
+    updateBlynk()
+  blynk.virtual_write(1, player2response)
+  player2guess = "NA"
+  player2guessFunc()
+  while player2guess == "NA":
+    wait(1)
+    updateBlynk()
+  blynk.virtual_write(2, player2guess)
