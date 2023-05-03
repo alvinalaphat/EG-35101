@@ -159,17 +159,289 @@ def player1guessFunc():
 
        def two_pressed():
          screen.set_screen_bg_color(0xffffff)
-         global player2guess
-         player2guess = "A2"
+         global player1guess
+         player1guess = "A2"
        two.pressed(two_pressed)
 
-       #three.pressed(one_pressed)
-       #four.pressed(one_pressed)
-       #two.pressed(one_pressed)
-       #five.pressed(one_pressed)
-       #six.pressed(one_pressed)
+       def three_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "A3"
+       three.pressed(three_pressed)
+       
+       def four_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "A4"
+       four.pressed(four_pressed)
+       
+       def five_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "A5"
+       five.pressed(five_pressed)
+       
+       def six_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "A6"
+       six.pressed(six_pressed)
     A.pressed(A_pressed)
 
+    def B_pressed():
+
+       screen.clean_screen()
+       wait(2)
+       one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+
+      #send selected variable to blynk
+      #display selected coordinate then wait while the screen below is shown on student B
+
+       def one_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "B1"
+       one.pressed(one_pressed)
+
+       def two_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "B2"
+       two.pressed(two_pressed)
+
+       def three_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "B3"
+       three.pressed(three_pressed)
+       
+       def four_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "B4"
+       four.pressed(four_pressed)
+       
+       def five_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "B5"
+       five.pressed(five_pressed)
+       
+       def six_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "B6"
+       six.pressed(six_pressed)
+    B.pressed(B_pressed)
+    
+    def C_pressed():
+
+       screen.clean_screen()
+       wait(2)
+       one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+
+      #send selected variable to blynk
+      #display selected coordinate then wait while the screen below is shown on student B
+
+       def one_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "C1"
+       one.pressed(one_pressed)
+
+       def two_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "C2"
+       two.pressed(two_pressed)
+
+       def three_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "C3"
+       three.pressed(three_pressed)
+       
+       def four_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "C4"
+       four.pressed(four_pressed)
+       
+       def five_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "C5"
+       five.pressed(five_pressed)
+       
+       def six_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "C6"
+       six.pressed(six_pressed)
+    C.pressed(C_pressed)
+    
+    def D_pressed():
+
+       screen.clean_screen()
+       wait(2)
+       one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+
+      #send selected variable to blynk
+      #display selected coordinate then wait while the screen below is shown on student B
+
+       def one_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "D1"
+       one.pressed(one_pressed)
+
+       def two_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "D2"
+       two.pressed(two_pressed)
+
+       def three_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "D3"
+       three.pressed(three_pressed)
+       
+       def four_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "D4"
+       four.pressed(four_pressed)
+       
+       def five_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "D5"
+       five.pressed(five_pressed)
+       
+       def six_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "D6"
+       six.pressed(six_pressed)
+    D.pressed(D_pressed)
+    
+    def E_pressed():
+
+       screen.clean_screen()
+       wait(2)
+       one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+
+      #send selected variable to blynk
+      #display selected coordinate then wait while the screen below is shown on student B
+
+       def one_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "E1"
+       one.pressed(one_pressed)
+
+       def two_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "E2"
+       two.pressed(two_pressed)
+
+       def three_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "E3"
+       three.pressed(three_pressed)
+       
+       def four_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "E4"
+       four.pressed(four_pressed)
+       
+       def five_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "E5"
+       five.pressed(five_pressed)
+       
+       def six_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "E6"
+       six.pressed(six_pressed)
+    E.pressed(E_pressed)
+    
+    def F_pressed():
+
+       screen.clean_screen()
+       wait(2)
+       one = M5Btn(text='1', x=18, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       two = M5Btn(text='2', x=118, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       three = M5Btn(text='3', x=220, y=15, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       four = M5Btn(text='4', x=18, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       five = M5Btn(text='5', x=118, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+       six = M5Btn(text='6', x=220, y=138, w=85, h=85, bg_c=0xFFFFFF, text_c=0x000000, font=FONT_MONT_14, parent=None)
+
+      #send selected variable to blynk
+      #display selected coordinate then wait while the screen below is shown on student B
+
+       def one_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "F1"
+       one.pressed(one_pressed)
+
+       def two_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "F2"
+       two.pressed(two_pressed)
+
+       def three_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "F3"
+       three.pressed(three_pressed)
+       
+       def four_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "F4"
+       four.pressed(four_pressed)
+       
+       def five_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "F5"
+       five.pressed(five_pressed)
+       
+       def six_pressed():
+         screen.set_screen_bg_color(0xffffff)
+         global player1guess
+         player1guess = "F6"
+       six.pressed(six_pressed)
+    F.pressed(F_pressed)
 
 def player1respFunc():
     # display player 2 guess on the screen
